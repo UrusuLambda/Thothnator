@@ -1,0 +1,138 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <script src="thothnator.js"></script>
+
+  <style>
+.suggest-knowledge-zone{
+margin:30px auto 20px auto;
+border-radius: 30px;
+padding:20px;
+width:95%;
+background-color:white;
+}
+
+.suggest-knowledges-header{
+color:rgb(197, 44, 44);
+font-size:15px;
+font-weight:bold;
+text-align:left;
+font-family: cursive;
+padding:5px;
+}
+
+.suggest-knowledges{
+overflow-x:auto;
+overflow-y:hidden;
+white-space:nowrap;
+}
+
+.suggest-knowledge{
+margin:auto 10px;
+box-shadow:3px 3px 3px rgba(0, 0, 0, 0.2);
+background-color:white;
+height:100%;
+}
+
+.suggest-knowledge-panel{
+display:inline-block;
+box-shadow:3px 3px 3px rgba(0, 0, 0, 0.2);
+background-color:rgb(52, 56, 60);
+width:140px;
+height:182px;
+vertical-align:top;
+ white-space:normal;
+margin:5px;
+padding:3px;
+color:white;
+font-weight:bold;
+font-size:14px;
+text-align:center;
+}
+
+.q-cell{
+display:table-cell;
+width:70%;
+color:white;
+background-color:rgb(52, 56, 60);
+border: solid 1px white;
+vertical-align:middle;
+font-weight:bold;
+}
+
+.index-cell{
+display:table-cell;
+width:5%;
+color:black;
+background-color:white;
+border: solid 1px white;
+vertical-align:middle;
+font-weight:bold;
+}
+
+.q-ans-cell{
+display:table-cell;
+width:30%;
+font-weight:bold;
+font-size:30px;
+border: solid 1px white;
+transition: all .2s ease-in-out;
+cursor:pointer;
+}
+
+.q-ans-cell-yes{
+background-color:rgb(105, 211, 101);
+}
+
+.q-ans-cell-no{
+background-color:rgb(243, 83, 65);
+}
+
+.q-ans-cell:hover{
+background-color:rgb(89, 140, 255);
+}
+
+
+.not-used-in-update{
+background-color:gray;
+ }
+   </style>
+
+ </head>
+ <body>
+   <h1 style="margin:auto;width:100%;text-align:center;">Question</h1>
+   <div style="width:100%; text-align:center;">
+     word candidate, please choose from below words and start questions:<br>
+     <div id="candidate-word"></div>
+  </div>
+  <div id="q" questionid="" style="width:100%;font-size:20px; font-weight:bold;text-align:center;">
+  </div>
+
+  <div style="display:table;width:80%;margin:20px auto;">
+    <div style="display:table-cell;width:50%;">
+      <div id="yes-button"  style="cursor:pointer;font-size:30px;background-color:#70e270;text-align:center;">Yes</div>
+    </div>
+    <div style="display:table-cell;width:50%;">
+      <div id="no-button" style="cursor:pointer;border:none;font-size:30px;background-color:#ff6565;text-align:center;">No</div>
+    </div>
+  </div>
+  
+  <div class="suggest-knowledge-zone" style="">
+    <div class="suggest-knowledges-header">Suggested</div>
+    <div class="suggest-knowledges" id="suggest-knowledges-raw">
+    </div>
+  </div>
+  
+  
+  <div style="margin:30px auto 50px auto;">
+    <div style="font-family: cursive;font-weight:bold;font-size:24px;">Question and Answer History
+      <div style="font-size:12px;color:gray">
+	Yes/Noを押すと再度計算し直します.しかし、質問の順番は変更できません.
+      </div>
+    </div>
+    <div id="q-hist-table" style="display:table;width:100%;border: solid 1px white; border-collapse: collapse;" tablenum="0">
+    </div>
+  </div>
+</body>
